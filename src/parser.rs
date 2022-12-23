@@ -20,11 +20,6 @@ impl Parser {
         Ok(&self.tokens[self.pos as usize])
     }
 
-    fn next(&mut self) -> Result<&Token, Error> {
-        self.pos += 1;
-        self.this()
-    }
-
     fn forward(&mut self) {
         self.pos += 1;
     }
@@ -104,6 +99,8 @@ impl Parser {
 
                 self.forward();
             }
+        } else {
+            self.forward(); // Token::RBracket
         }
 
         let states = self.block();
