@@ -9,7 +9,7 @@
 
 > 运行
 
-您可以尝试*cargo run*
+您可以尝试*cargo run test.ms*
 来测试test.ms，您可以查看src\main.rs中的逻辑，test.ms是固定的(为了方便测试)，您可以随意更改，但不能商用
 
 > 语法示例
