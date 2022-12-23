@@ -3,10 +3,14 @@ use mlang::lexer;
 use mlang::runner;
 use mlang::parser;
 use std::collections::HashMap;
+use std::env;
 
 fn main() {
+    let args: Vec<String> = env::args().collect();
+    if args.len() < 2 { panic!() }
+
     // 从文件读入源代码
-    let source = file::read_all("test.ms".to_string());
+    let source = file::read_all(&args[1]);
 
     // 词法分析
     let lexer_ = lexer::Lexer::new(source);
